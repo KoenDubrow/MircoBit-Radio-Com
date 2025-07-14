@@ -81,13 +81,13 @@ move_frame_if_1_end:
 .global SysTick_Handler
 .type SysTick_Handler, %function
 @Handler for timeout
-@Will will move the text one column to the right every **30** frame
+@Will will move the text one column to the right every **20** frame
 SysTick_Handler:
   push {r0-r3, lr}
   ldr r0, =frame
   ldr r1, [r0]
   add r1, #1
-  cmp r1, #30
+  cmp r1, #20
   bne SysTick_Handler_if_else
   SysTick_Handler_if_start:
     mov r1, #0
@@ -112,10 +112,10 @@ picture:
 .byte 0x00, 0x00, 0xFF, 0x00, 0x00
 text:
 textlength:
-.word 10
+.word 17
 textletter:
 .word 0
 textcolumn:
 .word 0
 textstart:
-.byte 0x49, 0x20, 0x41, 0x4D, 0x20, 0x4B, 0x4F, 0x45, 0x4E, 0x21 @I AM KOEN!
+.byte 0x49, 0x20, 0x4C, 0x4F, 0x53, 0x54, 0x20, 0x54, 0x48, 0x45, 0x20, 0x47, 0x41, 0x4D, 0x45, 0x3A, 0x28 

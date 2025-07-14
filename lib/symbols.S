@@ -139,6 +139,8 @@
 .global OFS_TIMER_CC4             @ 0x550
 .global OFS_TIMER_CC5             @ 0x554
 
+@Radio
+.global ADR_RADIO       @ 0x40001000
 
 @ --------------------- Implementation --------------------
 .set ADR_SYST_CSR,  0xE000E010
@@ -285,3 +287,44 @@
 .set OFS_TIMER_CC3,             0x54C
 .set OFS_TIMER_CC4,             0x550
 .set OFS_TIMER_CC5,             0x554
+
+@ ---------- RADIO ---------- @
+.set ADR_RADIO,                 0x40001000
+
+.set OFS_RADIO_TXEN,            0x000
+.set OFS_RADIO_RXEN,            0x004
+.set OFS_RADIO_START,           0x008
+.set OFS_RADIO_STOP,            0x00C
+.set OFS_TASKS_DISABLE,         0x010
+.set OFS_EVENTS_READY,          0x100
+.set OFS_EVENTS_ADDRESS,        0x104
+.set OFS_EVENTS_PAYLOAD,        0x108
+.set OFS_EVENTS_END,            0x10C
+.set OFS_EVENTS_DISABLED,       0x110
+.set OFS_EVENTS_CRCOK,          0x130
+.set OFS_EVENTS_CRCERROR,       0x134
+.set OFS_EVENTS_TXREADY,        0x154
+.set OFS_EVENTS_RXREADY,        0x158
+.set OFS_EVENTS_PHYEND,         0x16C
+.set OFS_RADIO_INTENSET,        0x304
+.set OFS_RADIO_INTENCLR,        0x308
+.set OFS_RADIO_CRCSTATUS,       0x400
+.set OFS_RADIO_RXMATCH,         0x408
+.set OFS_RADIO_RXCRC,           0x40C
+.set OFS_RADIO_PDUSTAT,         0x414
+.set OFS_RADIO_PACKETPTR,       0x504
+.set OFS_RADIO_MODE,            0x510
+.set OFS_RADIO_PCNF0,           0x514
+.set OFS_RADIO_PCFN1,           0x518
+.set OFS_RADIO_BASE0,           0x51C
+.set OFS_RADIO_BASE1,           0x520
+.set OFS_RADIO_PREFIX0,         0x524
+.set OFS_RADIO_PREFIX1,         0x528
+.set OFS_RADIO_TXADDRESS,       0x52C
+.set OFS_RADIO_RXADDRESS,       0x530
+.set OFS_RADIO_CRCCNF,          0x534
+.set OFS_RADIO_CRCPOLY,         0x538
+.set OFS_RADIO_CRCINIT,         0x53C
+.set OFS_RADIO_TIFS,            0x544
+.set OFS_RADIO_STATE,           0x550
+.set OFS_RADIO_DFEPACKET_PTR,   0x950
